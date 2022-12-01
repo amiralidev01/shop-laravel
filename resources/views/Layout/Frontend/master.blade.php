@@ -1,5 +1,5 @@
-@extends('layout.frontend.header')
+@include('layout.frontend.header')
 
 @yield('content')
 
-@extends('layout.frontend.footer')
+@include('layout.frontend.footer')
