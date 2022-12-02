@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\Categories\StoreRequest;
 use App\Models\Category;
-use Illuminate\Http\Request;
+
 
 class CategoriesController extends Controller
 {
@@ -30,7 +30,7 @@ class CategoriesController extends Controller
     public function all()
     {
 
-        $categories = Category::all();
+        $categories = Category::paginate(10);
 
         return view('Admin.Categories.all', compact('categories'));
     }
