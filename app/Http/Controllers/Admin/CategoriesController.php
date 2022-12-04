@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\Categories\StoreRequest;
+use App\Http\Requests\Admin\Categories\UpdateRequest;
 use App\Models\Category;
 
 
@@ -16,10 +17,10 @@ class CategoriesController extends Controller
 
     public function store(StoreRequest $request)
     {
-        $validatedData = $request->validate();
+        $validatedData = $request->validated();
         $createdCategory = Category::create([
-            'title' => $request->$validatedData['title'],
-            'slug' => $request->$validatedData['slug']
+            'title' => $validatedData['title'],
+            'slug' => $validatedData['slug']
         ]);
 
         if (!$createdCategory)
@@ -34,4 +35,38 @@ class CategoriesController extends Controller
 
         return view('Admin.Categories.all', compact('categories'));
     }
+
+
+    public function delete($Category_id)
+    {
+        $category = Category::find($Category_id);
+
+        $category->delete();
+
+        return back()->with('success', 'دسته بندی با موفقیت حذف شد');
+
+    }
+
+    public function update($Category_id)
+    {
+        $category = Category::find($Category_id);
+
+        return view('Admin.Categories.update', compact('category'));
+    }
+
+    public function edit(UpdateRequest $request, $Category_id)
+    {
+        $ValidatedData = $request->validated();
+
+        $category = Category::find($Category_id);
+        $UpdatedCategory = $category->update([
+            'title' => $ValidatedData['title'],
+            'slug' => $ValidatedData['slug']
+        ]);
+
+        if (!$UpdatedCategory)
+            return back()->with('failed', 'دسته بندی ویرایش نشد');
+        return back()->with('success', 'دسته بندی با موفقیت ویرایش شد');
+    }
+
 }

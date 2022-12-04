@@ -6,9 +6,10 @@
 
             <!-- Sidebar Menu -->
             <nav class="mt-2">
-                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                    data-accordion="false">
                     <li class="nav-item">
-                        <a href="index.php" class="nav-link text-center mb-4">
+                        <a href="/admin" class="nav-link text-center mb-4">
                             <img src="/../images/icons/logo-01.png" style="filter: brightness(0) invert(1);">
                         </a>
                     </li>
@@ -34,7 +35,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="category.php" class="nav-link">
+                                <a href="{{route('admin.categories.all')}}" class="nav-link">
                                     <i class="nav-icon fa fa-sitemap"></i>
                                     <p>دسته بندی ها</p>
                                 </a>
