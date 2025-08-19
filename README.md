@@ -68,14 +68,25 @@ http://127.0.0.1:8000
 📂 Project Structure
 <br>
 shop-laravel/
+<br>
 │-- app/              # Application logic (Models, Controllers, Middleware)
+<br>
 │-- bootstrap/        # Laravel bootstrap files
+<br>
 │-- config/           # Configuration files
+<br>
 │-- database/         # Migrations & seeders
+<br>
 │-- public/           # Publicly accessible files (index.php, assets)
+<br>
 │-- resources/        # Blade templates, JS, CSS
+<br>
 │-- routes/           # Web & API routes
+<br>
 │-- storage/          # Logs, cache, uploads
+<br>
 │-- tests/            # PHPUnit tests
+<br>
 │-- .env.example      # Environment variables template
+<br>
 │-- artisan           # Laravel CLI tool
