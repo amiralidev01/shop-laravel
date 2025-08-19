@@ -66,6 +66,7 @@ Now open in your browser:
 http://127.0.0.1:8000
 
 📂 Project Structure
+<br>
 shop-laravel/
 │-- app/              # Application logic (Models, Controllers, Middleware)
 │-- bootstrap/        # Laravel bootstrap files
